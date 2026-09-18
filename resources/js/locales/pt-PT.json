@@ -1,0 +1,19 @@
+{
+    "navigation": {
+        "login": "Iniciar sessão",
+        "register": "Criar conta",
+        "dashboard": "Painel"
+    },
+    "appearance": {
+        "label": "Tema",
+        "light": "Claro",
+        "dark": "Escuro",
+        "system": "Sistema"
+    },
+    "language": {
+        "label": "Idioma"
+    },
+    "welcome": {
+        "title": "Boas-vindas"
+    }
+}

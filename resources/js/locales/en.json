@@ -1,0 +1,19 @@
+{
+    "navigation": {
+        "login": "Log in",
+        "register": "Create account",
+        "dashboard": "Dashboard"
+    },
+    "appearance": {
+        "label": "Theme",
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+    },
+    "language": {
+        "label": "Language"
+    },
+    "welcome": {
+        "title": "Welcome"
+    }
+}
