@@ -3,6 +3,7 @@ import { Head, Link } from '@inertiajs/vue3';
 import { dashboard, login } from '@/routes';
 import { register } from '@/routes';
 import { useI18n } from 'vue-i18n';
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
 
 const { t } = useI18n();
 </script>
@@ -39,6 +40,8 @@ const { t } = useI18n();
                     >
                         Register
                     </Link>
+
+                    <LanguageSwitcher />
                 </template>
             </nav>
         </header>
