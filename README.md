@@ -8,6 +8,10 @@ with a focus on maintainable code, authorization and automated testing.
 > Work in progress. The project currently includes the application foundation.
 > Company management and ticket workflows are not implemented yet.
 
+## Preview
+
+![NexoDesk welcome page](docs/images/welcome-desktop.png)
+
 ## Tech stack
 
 - Laravel 13 and PHP
@@ -39,7 +43,7 @@ screens is still in progress.
 - [x] Implement language selection and persistence
 - [x] Add Portuguese backend translations
 - [x] Test the locale selection flow
-- [ ] Build the NexoDesk welcome page
+- [x] Build the NexoDesk welcome page
 - [ ] Document and configure continuous integration
 - [ ] Implement company registration and membership
 - [ ] Add invitations and company roles
