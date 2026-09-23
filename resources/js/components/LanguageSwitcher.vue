@@ -11,9 +11,9 @@ const form = useForm<{ locale: Locale }>({
     locale: page.props.locale,
 });
 
-const languages: { value: Locale; label: string }[] = [
-    { value: 'en', label: 'English' },
-    { value: 'pt-PT', label: 'Português' },
+const languages: { value: Locale; label: string; name: string }[] = [
+    { value: 'en', label: 'EN', name: 'English' },
+    { value: 'pt-PT', label: 'PT', name: 'Português (Portugal)' },
 ];
 
 function changeLocale(locale: Locale): void {
@@ -34,16 +34,18 @@ function changeLocale(locale: Locale): void {
         <div
             role="group"
             :aria-label="t('language.label')"
-            class="border-border bg-card inline-flex gap-1 rounded-lg border p-1"
+            class="border-border bg-card inline-flex shrink-0 gap-1 rounded-lg border p-0.5"
         >
             <button
                 v-for="language in languages"
                 :key="language.value"
+                :aria-label="language.name"
+                :title="language.name"
                 type="button"
                 :lang="language.value"
                 :aria-pressed="page.props.locale === language.value"
                 :disabled="form.processing"
-                class="focus-visible:outline-ring rounded-md px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-wait disabled:opacity-50"
+                class="focus-visible:outline-ring inline-flex h-8 w-9 shrink-0 items-center justify-center rounded-md text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2"
                 :class="
                     page.props.locale === language.value
                         ? 'bg-primary text-primary-foreground'
@@ -64,5 +66,3 @@ function changeLocale(locale: Locale): void {
         </p>
     </div>
 </template>
-
-<style scoped></style>

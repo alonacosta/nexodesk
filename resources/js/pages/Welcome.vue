@@ -30,30 +30,33 @@ const features = ['companies', 'customers', 'tickets'] as const;
                     NexoDesk
                 </Link>
 
-                <div class="flex flex-wrap items-center gap-3">
+                <div class="ml-auto flex items-center gap-3">
                     <LanguageSwitcher />
-                    <Link
-                        v-if="$page.props.auth.user"
-                        :href="dashboard()"
-                        class="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-4 py-2 font-medium transition-colors"
-                    >
-                        {{ t('navigation.dashboard') }}
-                    </Link>
 
-                    <template v-else>
+                    <div class="hidden items-center gap-3 md:flex">
                         <Link
-                            :href="login()"
-                            class="text-foreground hover:bg-accent hover:text-accent-foreground rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+                            v-if="$page.props.auth.user"
+                            :href="dashboard()"
+                            class="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-4 py-2 font-medium transition-colors"
                         >
-                            {{ t('navigation.login') }}
+                            {{ t('navigation.dashboard') }}
                         </Link>
-                        <Link
-                            :href="register()"
-                            class="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-4 py-2 text-sm font-medium transition-colors"
-                        >
-                            {{ t('navigation.register') }}
-                        </Link>
-                    </template>
+
+                        <template v-else>
+                            <Link
+                                :href="login()"
+                                class="text-foreground hover:bg-accent hover:text-accent-foreground inline-flex h-9 w-28 shrink-0 items-center justify-center rounded-lg text-sm font-medium whitespace-nowrap transition-colors"
+                            >
+                                {{ t('navigation.login') }}
+                            </Link>
+                            <Link
+                                :href="register()"
+                                class="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-9 w-34 shrink-0 items-center justify-center rounded-lg text-sm font-medium whitespace-nowrap transition-colors"
+                            >
+                                {{ t('navigation.register') }}
+                            </Link>
+                        </template>
+                    </div>
                 </div>
             </nav>
         </header>
