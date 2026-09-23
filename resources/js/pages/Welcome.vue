@@ -4,6 +4,7 @@ import { dashboard, home, login } from '@/routes';
 import { register } from '@/routes';
 import { useI18n } from 'vue-i18n';
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
+import AppLogoIcon from '@/components/AppLogoIcon.vue';
 
 const { t } = useI18n();
 
@@ -25,9 +26,14 @@ const features = ['companies', 'customers', 'tickets'] as const;
             >
                 <Link
                     :href="home()"
-                    class="text-primary text-2xl font-bold tracking-tight"
+                    class="text-primary inline-flex shrink-0 items-center gap-2 text-2xl font-bold tracking-tight"
                 >
-                    NexoDesk
+                    <span
+                        class="bg-primary text-primary-foreground flex size-8 items-center justify-center rounded-md"
+                    >
+                        <AppLogoIcon class="size-5" />
+                    </span>
+                    <span>NexoDesk</span>
                 </Link>
 
                 <div class="ml-auto flex items-center gap-3">

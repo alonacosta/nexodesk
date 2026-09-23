@@ -44,7 +44,7 @@ screens is still in progress.
 - [x] Add Portuguese backend translations
 - [x] Test the locale selection flow
 - [x] Build the NexoDesk welcome page
-- [ ] Document and configure continuous integration
+- [x] Document and configure continuous integration
 - [ ] Implement company registration and membership
 - [ ] Add invitations and company roles
 - [ ] Implement customer management
@@ -99,6 +99,13 @@ Run backend tests:
 Create a production frontend build:
 
     npm run build
+
+## Continuous integration
+
+GitHub Actions runs the CI workflow on pushes to `main` and on pull requests.
+
+The workflow prepares PHP 8.4 and Node.js 22, runs `composer setup`,
+and then executes `composer ci:check`.
 
 ## Localization
 
