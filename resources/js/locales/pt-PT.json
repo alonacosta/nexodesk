@@ -1,5 +1,6 @@
 {
     "navigation": {
+        "main": "Navegação principal",
         "login": "Iniciar sessão",
         "register": "Criar conta",
         "dashboard": "Painel"
@@ -14,6 +15,25 @@
         "label": "Idioma"
     },
     "welcome": {
-        "title": "Boas-vindas"
+        "page_title": "Início",
+        "eyebrow": "GESTÃO DE SUPORTE AO CLIENTE",
+        "title": "Um espaço para organizar o suporte da tua equipa.",
+        "description": "O NexoDesk está a ser desenvolvido para reunir clientes, equipas e pedidos de suporte num único lugar.",
+        "development_notice": "Projeto em desenvolvimento. As funcionalidades de gestão de empresas e tickets estarão disponíveis mais tarde.",
+        "features_title": "Funcionalidades previstas",
+        "features": {
+            "companies": {
+                "title": "Empresas",
+                "description": "Organiza cada empresa com a sua equipa e os seus próprios dados."
+            },
+            "customers": {
+                "title": "Clientes",
+                "description": "Reúne os contactos e as informações dos clientes da tua empresa."
+            },
+            "tickets": {
+                "title": "Tickets",
+                "description": "Acompanha pedidos de suporte, define prioridades e atribui responsáveis."
+            }
+        }
     }
 }

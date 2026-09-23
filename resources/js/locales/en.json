@@ -1,5 +1,6 @@
 {
     "navigation": {
+        "main": "Main navigation",
         "login": "Log in",
         "register": "Create account",
         "dashboard": "Dashboard"
@@ -14,6 +15,25 @@
         "label": "Language"
     },
     "welcome": {
-        "title": "Welcome"
+        "page_title": "Home",
+        "eyebrow": "CUSTOMER SUPPORT MANAGEMENT",
+        "title": "One place to organize your team's support.",
+        "description": "NexoDesk is being developed to bring customers, teams and support requests together in one place.",
+        "development_notice": "Work in progress. Company and ticket management features will be available later.",
+        "features_title": "Planned features",
+        "features": {
+            "companies": {
+                "title": "Companies",
+                "description": "Organize each company with its own team and data."
+            },
+            "customers": {
+                "title": "Customers",
+                "description": "Keep your company's customer details and contact information together."
+            },
+            "tickets": {
+                "title": "Tickets",
+                "description": "Track support requests, set priorities and assign team members."
+            }
+        }
     }
 }
