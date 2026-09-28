@@ -54,6 +54,51 @@
             "title": "Cria a tua conta",
             "description": "Preenche os teus dados para criar uma conta.",
             "has_account": "Já tens conta?"
+        },
+        "forgot_password": {
+            "title": "Recuperar palavra-passe",
+            "description": "Introduz o teu email para receberes um link de redefinição da palavra-passe.",
+            "submit": "Enviar link de recuperação",
+            "back_to_login": "Voltar ao início de sessão"
+        },
+        "reset_password": {
+            "title": "Redefinir palavra-passe",
+            "description": "Introduz e confirma a tua nova palavra-passe.",
+            "submit": "Guardar nova palavra-passe"
+        },
+        "logout": "Terminar sessão",
+        "confirm": {
+            "title": "Confirmar palavra-passe",
+            "description": "Esta é uma área protegida da aplicação. Confirma a tua palavra-passe antes de continuar.",
+            "passkey": "Confirmar com chave de acesso",
+            "confirming": "A confirmar...",
+            "or_password": "Ou confirma com a palavra-passe"
+        },
+        "two_factor": {
+            "title": "Autenticação de dois fatores",
+            "authentication_title": "Código de autenticação",
+            "authentication_description": "Introduz o código fornecido pela tua aplicação de autenticação.",
+            "recovery_title": "Código de recuperação",
+            "recovery_description": "Confirma o acesso à tua conta introduzindo um dos teus códigos de recuperação de emergência.",
+            "use_authentication": "Usar um código de autenticação",
+            "use_recovery": "Usar um código de recuperação",
+            "recovery_placeholder": "Introduz o código de recuperação",
+            "continue": "Continuar"
+        },
+        "verify_email": {
+            "title": "Verificar email",
+            "description": "Confirma o teu endereço de email através do link que te enviámos.",
+            "sent": "Foi enviado um novo link de verificação para o endereço de email que forneceste no registo.",
+            "resend": "Reenviar email de verificação"
+        },
+        "passkey": {
+            "authenticating": "A autenticar...",
+            "sign_in": "Iniciar sessão com chave de acesso",
+            "or_email": "Ou continuar com email"
+        },
+        "password_visibility": {
+            "show": "Mostrar palavra-passe",
+            "hide": "Ocultar palavra-passe"
         }
     }
 }

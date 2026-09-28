@@ -54,6 +54,51 @@
             "title": "Create an account",
             "description": "Enter your details to create your account.",
             "has_account": "Already have an account?"
+        },
+        "forgot_password": {
+            "title": "Forgot password",
+            "description": "Enter your email to receive a password reset link.",
+            "submit": "Email password reset link",
+            "back_to_login": "Back to log in"
+        },
+        "reset_password": {
+            "title": "Reset password",
+            "description": "Enter and confirm your new password.",
+            "submit": "Save new password"
+        },
+        "logout": "Log out",
+        "confirm": {
+            "title": "Confirm password",
+            "description": "This is a secure area of the application. Please confirm your password before continuing.",
+            "passkey": "Confirm with passkey",
+            "confirming": "Confirming...",
+            "or_password": "Or confirm with password"
+        },
+        "two_factor": {
+            "title": "Two-factor authentication",
+            "authentication_title": "Authentication code",
+            "authentication_description": "Enter the code provided by your authenticator application.",
+            "recovery_title": "Recovery code",
+            "recovery_description": "Confirm access to your account by entering one of your emergency recovery codes.",
+            "use_authentication": "Use an authentication code",
+            "use_recovery": "Use a recovery code",
+            "recovery_placeholder": "Enter recovery code",
+            "continue": "Continue"
+        },
+        "verify_email": {
+            "title": "Email verification",
+            "description": "Please verify your email address by clicking the link we emailed to you.",
+            "sent": "A new verification link has been sent to the email address you provided during registration.",
+            "resend": "Resend verification email"
+        },
+        "passkey": {
+            "authenticating": "Authenticating...",
+            "sign_in": "Sign in with a passkey",
+            "or_email": "Or continue with email"
+        },
+        "password_visibility": {
+            "show": "Show password",
+            "hide": "Hide password"
         }
     }
 }
