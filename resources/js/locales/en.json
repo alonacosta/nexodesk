@@ -35,5 +35,25 @@
                 "description": "Track support requests, set priorities and assign team members."
             }
         }
+    },
+    "auth": {
+        "email": "Email address",
+        "password": "Password",
+        "name": "Name",
+        "full_name": "Full name",
+        "confirm_password": "Confirm password",
+        "email_placeholder": "name{'@'}example.com",
+        "login": {
+            "title": "Log in to your account",
+            "description": "Enter your email and password to continue.",
+            "forgot_password": "Forgot your password?",
+            "remember_me": "Remember me",
+            "no_account": "Don't have an account?"
+        },
+        "register": {
+            "title": "Create an account",
+            "description": "Enter your details to create your account.",
+            "has_account": "Already have an account?"
+        }
     }
 }

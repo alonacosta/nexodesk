@@ -35,5 +35,25 @@
                 "description": "Acompanha pedidos de suporte, define prioridades e atribui responsáveis."
             }
         }
+    },
+    "auth": {
+        "email": "Endereço de email",
+        "password": "Palavra-passe",
+        "name": "Nome",
+        "full_name": "Nome completo",
+        "confirm_password": "Confirmar palavra-passe",
+        "email_placeholder": "nome{'@'}exemplo.pt",
+        "login": {
+            "title": "Inicia sessão na tua conta",
+            "description": "Introduz o teu email e a tua palavra-passe para continuar.",
+            "forgot_password": "Esqueceste-te da palavra-passe?",
+            "remember_me": "Manter sessão iniciada",
+            "no_account": "Ainda não tens conta?"
+        },
+        "register": {
+            "title": "Cria a tua conta",
+            "description": "Preenche os teus dados para criar uma conta.",
+            "has_account": "Já tens conta?"
+        }
     }
 }
