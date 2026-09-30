@@ -15,10 +15,12 @@ import {
 } from '@/components/ui/sidebar';
 import UserInfo from '@/components/UserInfo.vue';
 import UserMenuContent from '@/components/UserMenuContent.vue';
+import { useI18n } from 'vue-i18n';
 
 const page = usePage();
 const user = computed(() => page.props.auth.user);
 const { isMobile, state } = useSidebar();
+const { t } = useI18n();
 </script>
 
 <template>
@@ -30,6 +32,7 @@ const { isMobile, state } = useSidebar();
                         size="lg"
                         class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                         data-test="sidebar-menu-button"
+                        :aria-label="t('navigation.user_menu')"
                     >
                         <UserInfo :user="user" />
                         <ChevronsUpDown class="ml-auto size-4" />

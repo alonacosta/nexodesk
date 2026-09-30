@@ -3,7 +3,12 @@
         "main": "Main navigation",
         "login": "Log in",
         "register": "Create account",
-        "dashboard": "Dashboard"
+        "dashboard": "Dashboard",
+        "repository": "Repository",
+        "documentation": "Documentation",
+        "user_menu": "User menu",
+        "settings": "Settings",
+        "platform": "Platform"
     },
     "appearance": {
         "label": "Theme",
@@ -99,6 +104,100 @@
         "password_visibility": {
             "show": "Show password",
             "hide": "Hide password"
+        }
+    },
+    "settings": {
+        "profile": {
+            "title": "Profile settings",
+            "heading": "Profile",
+            "description": "Update your name and email address.",
+            "email_unverified": "Your email address is unverified.",
+            "resend_verification": "Resend verification email.",
+            "verification_sent": "A new verification link has been sent to your email address.",
+            "save": "Save"
+        },
+        "description": "Manage your profile and account settings.",
+        "security": {
+            "label": "Security",
+            "title": "Security settings",
+            "update_password": "Update password",
+            "password_description": "Use a long, unique password to protect your account.",
+            "current_password": "Current password",
+            "new_password": "New password",
+            "save": "Save"
+        },
+        "appearance": {
+            "label": "Appearance",
+            "title": "Appearance settings",
+            "description": "Choose the application theme."
+        },
+        "delete_account": {
+            "title": "Delete account",
+            "description": "Delete your account and all of its resources.",
+            "warning": "Warning",
+            "warning_description": "Please proceed with caution. This cannot be undone.",
+            "confirm_title": "Are you sure you want to delete your account?",
+            "confirm_description": "Once your account is deleted, all of its resources and data will also be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.",
+            "cancel": "Cancel"
+        },
+        "two_factor": {
+            "description": "Manage your two-factor authentication settings.",
+            "disabled_description": "When you enable two-factor authentication, you will be prompted for a code during login. You can retrieve this code from a TOTP-compatible authenticator app on your phone.",
+            "enabled_description": "During login, you will be prompted for a code from the authenticator app you configured on your phone.",
+            "continue_setup": "Continue setup",
+            "enable": "Enable two-factor authentication",
+            "disable": "Disable two-factor authentication",
+            "setup": {
+                "title": "Enable two-factor authentication",
+                "description": "To finish enabling two-factor authentication, scan the QR code or enter the setup key in your authenticator app.",
+                "enabled_title": "Two-factor authentication enabled",
+                "enabled_description": "Two-factor authentication is now enabled. Scan the QR code or enter the setup key in your authenticator app.",
+                "verify_title": "Verify authentication code",
+                "verify_description": "Enter the 6-digit code from your authenticator app.",
+                "manual": "Or enter the key manually",
+                "key": "Setup key",
+                "copy": "Copy setup key",
+                "copied": "Key copied",
+                "close": "Close",
+                "back": "Back",
+                "confirm": "Confirm"
+            },
+            "recovery": {
+                "title": "Recovery codes",
+                "description": "Recovery codes let you regain access if you lose your authentication device. Store them in a secure password manager.",
+                "hide": "Hide recovery codes",
+                "view": "View recovery codes",
+                "regenerate": "Regenerate codes",
+                "usage": "Each recovery code can only be used once and is removed after use. To get new codes, use the regenerate codes button above."
+            }
+        },
+        "passkeys": {
+            "title": "Passkeys",
+            "description": "Manage your passkeys for passwordless sign-in.",
+            "empty_title": "No passkeys yet",
+            "empty_description": "Add a passkey to sign in without a password.",
+            "default_name": "{browser} on {os}",
+            "unsupported": "Passkeys are not supported in this browser.",
+            "add": "Add passkey",
+            "name": "Passkey name",
+            "name_placeholder": "e.g., MacBook Pro or iPhone",
+            "name_help": "Choose a name that helps you identify this passkey later.",
+            "registering": "Registering...",
+            "register": "Register passkey",
+            "cancel": "Cancel",
+            "added": "Added {date}",
+            "last_used": "Last used: {date}",
+            "remove": "Remove passkey",
+            "removing": "Removing...",
+            "remove_description": "Are you sure you want to remove the passkey “{name}”? You will no longer be able to use it to sign in."
+        }
+    },
+    "errors": {
+        "title": "Something went wrong.",
+        "two_factor": {
+            "qr_code": "Failed to fetch the QR code.",
+            "setup_key": "Failed to fetch the setup key.",
+            "recovery_codes": "Failed to fetch recovery codes."
         }
     }
 }

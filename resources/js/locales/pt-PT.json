@@ -3,7 +3,12 @@
         "main": "Navegação principal",
         "login": "Iniciar sessão",
         "register": "Criar conta",
-        "dashboard": "Painel"
+        "dashboard": "Painel",
+        "repository": "Repositório",
+        "documentation": "Documentação",
+        "user_menu": "Menu do utilizador",
+        "settings": "Definições",
+        "platform": "Plataforma"
     },
     "appearance": {
         "label": "Tema",
@@ -99,6 +104,100 @@
         "password_visibility": {
             "show": "Mostrar palavra-passe",
             "hide": "Ocultar palavra-passe"
+        }
+    },
+    "settings": {
+        "profile": {
+            "title": "Definições do perfil",
+            "heading": "Perfil",
+            "description": "Atualiza o teu nome e endereço de email.",
+            "email_unverified": "O teu endereço de email ainda não foi verificado.",
+            "resend_verification": "Reenviar email de verificação.",
+            "verification_sent": "Foi enviado um novo link de verificação para o teu endereço de email.",
+            "save": "Guardar"
+        },
+        "description": "Gere o teu perfil e as definições da tua conta.",
+        "security": {
+            "label": "Segurança",
+            "title": "Definições de segurança",
+            "update_password": "Alterar palavra-passe",
+            "password_description": "Usa uma palavra-passe longa e única para proteger a tua conta.",
+            "current_password": "Palavra-passe atual",
+            "new_password": "Nova palavra-passe",
+            "save": "Guardar"
+        },
+        "appearance": {
+            "label": "Aparência",
+            "title": "Definições de aparência",
+            "description": "Escolhe o tema da aplicação."
+        },
+        "delete_account": {
+            "title": "Eliminar conta",
+            "description": "Elimina a tua conta e todos os recursos associados.",
+            "warning": "Aviso",
+            "warning_description": "Continua com cuidado. Esta ação não pode ser anulada.",
+            "confirm_title": "Tens a certeza de que queres eliminar a tua conta?",
+            "confirm_description": "Ao eliminares a tua conta, todos os recursos e dados associados serão também eliminados permanentemente. Introduz a tua palavra-passe para confirmar a eliminação definitiva da conta.",
+            "cancel": "Cancelar"
+        },
+        "two_factor": {
+            "description": "Gere as definições de autenticação de dois fatores.",
+            "disabled_description": "Ao ativares a autenticação de dois fatores, será pedido um código ao iniciares sessão. Podes obter esse código numa aplicação de autenticação compatível com TOTP no teu telemóvel.",
+            "enabled_description": "Ao iniciares sessão, será pedido um código da aplicação de autenticação que configuraste no teu telemóvel.",
+            "continue_setup": "Continuar configuração",
+            "enable": "Ativar autenticação de dois fatores",
+            "disable": "Desativar autenticação de dois fatores",
+            "setup": {
+                "title": "Ativar autenticação de dois fatores",
+                "description": "Para concluir a ativação, lê o código QR ou introduz a chave de configuração na tua aplicação de autenticação.",
+                "enabled_title": "Autenticação de dois fatores ativada",
+                "enabled_description": "A autenticação de dois fatores está ativa. Lê o código QR ou introduz a chave de configuração na tua aplicação de autenticação.",
+                "verify_title": "Verificar código de autenticação",
+                "verify_description": "Introduz o código de 6 dígitos da tua aplicação de autenticação.",
+                "manual": "Ou introduz a chave manualmente",
+                "key": "Chave de configuração",
+                "copy": "Copiar chave de configuração",
+                "copied": "Chave copiada",
+                "close": "Fechar",
+                "back": "Voltar",
+                "confirm": "Confirmar"
+            },
+            "recovery": {
+                "title": "Códigos de recuperação",
+                "description": "Os códigos de recuperação permitem recuperar o acesso se perderes o dispositivo de autenticação. Guarda-os num gestor de palavras-passe seguro.",
+                "hide": "Ocultar códigos de recuperação",
+                "view": "Mostrar códigos de recuperação",
+                "regenerate": "Gerar novos códigos",
+                "usage": "Cada código de recuperação só pode ser usado uma vez e é removido após a utilização. Para obteres novos códigos, usa o botão de gerar novos códigos acima."
+            }
+        },
+        "passkeys": {
+            "title": "Chaves de acesso",
+            "description": "Gere as tuas chaves de acesso para iniciar sessão sem palavra-passe.",
+            "empty_title": "Ainda não tens chaves de acesso",
+            "empty_description": "Adiciona uma chave de acesso para iniciar sessão sem palavra-passe.",
+            "default_name": "{browser} em {os}",
+            "unsupported": "Este browser não suporta chaves de acesso.",
+            "add": "Adicionar chave de acesso",
+            "name": "Nome da chave de acesso",
+            "name_placeholder": "Por exemplo, MacBook Pro ou iPhone",
+            "name_help": "Escolhe um nome que te ajude a identificar esta chave de acesso mais tarde.",
+            "registering": "A registar...",
+            "register": "Registar chave de acesso",
+            "cancel": "Cancelar",
+            "added": "Adicionada {date}",
+            "last_used": "Última utilização: {date}",
+            "remove": "Remover chave de acesso",
+            "removing": "A remover...",
+            "remove_description": "Tens a certeza de que queres remover a chave de acesso «{name}»? Deixarás de poder utilizá-la para iniciar sessão."
+        }
+    },
+    "errors": {
+        "title": "Ocorreu um erro.",
+        "two_factor": {
+            "qr_code": "Não foi possível obter o código QR.",
+            "setup_key": "Não foi possível obter a chave de configuração.",
+            "recovery_codes": "Não foi possível obter os códigos de recuperação."
         }
     }
 }
