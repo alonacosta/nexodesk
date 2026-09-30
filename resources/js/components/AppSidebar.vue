@@ -29,7 +29,7 @@ const mainNavItems = computed<NavItem[]>(() => [
     },
 ]);
 
-const footerNavItems: NavItem[] = [
+const footerNavItems = computed<NavItem[]>(() => [
     {
         title: t('navigation.repository'),
         href: 'https://github.com/laravel/vue-starter-kit',
@@ -40,7 +40,7 @@ const footerNavItems: NavItem[] = [
         href: 'https://laravel.com/docs/starter-kits#vue',
         icon: BookOpen,
     },
-];
+]);
 </script>
 
 <template>
