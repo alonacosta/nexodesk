@@ -5,8 +5,9 @@ A SaaS application for managing customer support tickets across companies.
 Built as a portfolio and learning project with Laravel, Vue and TypeScript,
 with a focus on maintainable code, authorization and automated testing.
 
-> Work in progress. The project currently includes the application foundation.
-> Company management and ticket workflows are not implemented yet.
+> Work in progress. The project includes authentication, localization
+> and the company membership data model.
+> Company management screens and ticket workflows are not implemented yet.
 
 ## Preview
 
@@ -32,9 +33,12 @@ with a focus on maintainable code, authorization and automated testing.
 - Laravel and Vue locale synchronization.
 - Portuguese backend translations through Laravel Lang.
 - Server-side validation of supported locales.
-
-The language infrastructure is working. Translation of all application
-screens is still in progress.
+- Responsive welcome page and NexoDesk branding.
+- Translated authentication and account settings screens.
+- Company data model with unique slugs.
+- Many-to-many relationships between users and companies.
+- Company-specific membership roles: owner, admin and member.
+- Automated tests for company relationships, role casting and duplicate memberships.
 
 ## Roadmap
 
@@ -45,8 +49,11 @@ screens is still in progress.
 - [x] Test the locale selection flow
 - [x] Build the NexoDesk welcome page
 - [x] Document and configure continuous integration
-- [ ] Implement company registration and membership
-- [ ] Add invitations and company roles
+- [x] Add company and membership models with role casting
+- [x] Test company relationships and membership constraints
+- [ ] Implement company registration and management screens
+- [ ] Add company invitations and member management
+- [ ] Implement role-based permissions and ownership transfer
 - [ ] Implement customer management
 - [ ] Implement ticket creation, assignment and status updates
 - [ ] Enforce company data isolation and authorization
