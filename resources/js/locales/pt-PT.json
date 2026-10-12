@@ -8,7 +8,8 @@
         "documentation": "Documentação",
         "user_menu": "Menu do utilizador",
         "settings": "Definições",
-        "platform": "Plataforma"
+        "platform": "Plataforma",
+        "companies": "Empresas"
     },
     "appearance": {
         "label": "Tema",
@@ -198,6 +199,16 @@
             "qr_code": "Não foi possível obter o código QR.",
             "setup_key": "Não foi possível obter a chave de configuração.",
             "recovery_codes": "Não foi possível obter os códigos de recuperação."
+        }
+    },
+    "companies": {
+        "title": "Empresas",
+        "description": "Empresas a que pertences e a tua função em cada uma.",
+        "empty": "Ainda não pertences a nenhuma empresa.",
+        "roles": {
+            "owner": "Proprietário",
+            "admin": "Administrador",
+            "member": "Membro"
         }
     }
 }

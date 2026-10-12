@@ -15,6 +15,7 @@ use Illuminate\Support\Carbon;
  * @property string $slug
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ * @property-read CompanyUser $pivot
  */
 #[Fillable(['name', 'slug'])]
 class Company extends Model

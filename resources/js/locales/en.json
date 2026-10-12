@@ -8,7 +8,8 @@
         "documentation": "Documentation",
         "user_menu": "User menu",
         "settings": "Settings",
-        "platform": "Platform"
+        "platform": "Platform",
+        "companies": "Companies"
     },
     "appearance": {
         "label": "Theme",
@@ -198,6 +199,16 @@
             "qr_code": "Failed to fetch the QR code.",
             "setup_key": "Failed to fetch the setup key.",
             "recovery_codes": "Failed to fetch recovery codes."
+        }
+    },
+    "companies": {
+        "title": "Companies",
+        "description": "Companies you belong to and your role in each one.",
+        "empty": "You do not belong to any companies yet.",
+        "roles": {
+            "owner": "Owner",
+            "admin": "Administrator",
+            "member": "Member"
         }
     }
 }

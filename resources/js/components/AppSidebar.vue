@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, FolderGit2, LayoutGrid } from '@lucide/vue';
+import { BookOpen, Building2, FolderGit2, LayoutGrid } from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
@@ -18,6 +18,7 @@ import { dashboard } from '@/routes';
 import type { NavItem } from '@/types';
 import { useI18n } from 'vue-i18n';
 import { computed } from 'vue';
+import { index as companiesIndex } from '@/routes/companies';
 
 const { t } = useI18n();
 
@@ -26,6 +27,11 @@ const mainNavItems = computed<NavItem[]>(() => [
         title: t('navigation.dashboard'),
         href: dashboard(),
         icon: LayoutGrid,
+    },
+    {
+        title: t('navigation.companies'),
+        href: companiesIndex(),
+        icon: Building2,
     },
 ]);
 
