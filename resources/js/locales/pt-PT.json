@@ -209,6 +209,11 @@
             "owner": "Proprietário",
             "admin": "Administrador",
             "member": "Membro"
-        }
+        },
+        "open": "Abrir empresa",
+        "overview_description": "Informações gerais da empresa.",
+        "name": "Nome",
+        "identifier": "Identificador",
+        "back": "Voltar às empresas"
     }
 }

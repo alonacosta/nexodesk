@@ -32,4 +32,17 @@ class CompanyController extends Controller
             'companies' => $companies,
         ]);
     }
+
+    public function show(Request $request, Company $company): Response
+    {
+        Gate::authorize('view', $company);
+
+        return Inertia::render('companies/Show', [
+            'company' => [
+                'id' => $company->id,
+                'name' => $company->name,
+                'slug' => $company->slug,
+            ],
+        ]);
+    }
 }

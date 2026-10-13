@@ -20,7 +20,9 @@ class CompanyPolicy
      */
     public function view(User $user, Company $company): bool
     {
-        return false;
+        return $user->companies()
+            ->whereKey($company->id)
+            ->exists();
     }
 
     /**

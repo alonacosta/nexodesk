@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { index } from '@/routes/companies';
+import { index, show } from '@/routes/companies';
 import { useI18n } from 'vue-i18n';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 import Heading from '@/components/Heading.vue';
+import { Button } from '@/components/ui/button';
 
 type CompanyListItem = {
     id: number;
@@ -62,6 +63,12 @@ const { t } = useI18n();
                 <p class="text-muted-foreground mt-2 text-sm break-all">
                     {{ company.slug }}
                 </p>
+
+                <Button variant="outline" as-child class="mt-4">
+                    <Link :href="show(company.slug)">
+                        {{ t('companies.open') }}
+                    </Link>
+                </Button>
             </article>
         </div>
 

@@ -209,6 +209,11 @@
             "owner": "Owner",
             "admin": "Administrator",
             "member": "Member"
-        }
+        },
+        "open": "Open company",
+        "overview_description": "General company information.",
+        "name": "Name",
+        "identifier": "Identifier",
+        "back": "Back to companies"
     }
 }
