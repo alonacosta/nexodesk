@@ -5,9 +5,9 @@ A SaaS application for managing customer support tickets across companies.
 Built as a portfolio and learning project with Laravel, Vue and TypeScript,
 with a focus on maintainable code, authorization and automated testing.
 
-> Work in progress. The project includes authentication, localization
-> and the company membership data model.
-> Company management screens and ticket workflows are not implemented yet.
+> Work in progress. The project includes authentication, localization,
+> company memberships, and company listing and details pages.
+> Company creation, member management and ticket workflows are not implemented yet.
 
 ## Preview
 
@@ -39,6 +39,10 @@ with a focus on maintainable code, authorization and automated testing.
 - Many-to-many relationships between users and companies.
 - Company-specific membership roles: owner, admin and member.
 - Automated tests for company relationships, role casting and duplicate memberships.
+- Company listing restricted to the authenticated user's memberships.
+- Company details pages accessible through unique slugs.
+- Policy-based access control for viewing individual companies.
+- Automated tests for member access, forbidden access and missing companies.
 
 ## Roadmap
 
@@ -51,6 +55,9 @@ with a focus on maintainable code, authorization and automated testing.
 - [x] Document and configure continuous integration
 - [x] Add company and membership models with role casting
 - [x] Test company relationships and membership constraints
+- [x] List the authenticated user's companies
+- [x] Add company details pages with membership authorization
+- [x] Test company listing isolation and details access
 - [ ] Implement company registration and management screens
 - [ ] Add company invitations and member management
 - [ ] Implement role-based permissions and ownership transfer
