@@ -214,6 +214,13 @@
         "overview_description": "General company information.",
         "name": "Name",
         "identifier": "Identifier",
-        "back": "Back to companies"
+        "back": "Back to companies",
+        "create": {
+            "title": "Create company",
+            "description": "Enter the company name. You will become its owner and will be able to manage the team.",
+            "name_placeholder": "E.g. Atlas Digital",
+            "cancel": "Cancel",
+            "submit": "Create company"
+        }
     }
 }

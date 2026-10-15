@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n';
 import { Head, Link } from '@inertiajs/vue3';
 import Heading from '@/components/Heading.vue';
 import { Button } from '@/components/ui/button';
+import CreateCompanyDialog from '@/components/companies/CreateCompanyDialog.vue';
 
 type CompanyListItem = {
     id: number;
@@ -34,10 +35,19 @@ const { t } = useI18n();
     <Head :title="t('companies.title')" />
 
     <div class="flex flex-1 flex-col p-4">
-        <Heading
-            :title="t('companies.title')"
-            :description="t('companies.description')"
-        />
+        <div
+            class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+        >
+            <Heading
+                :title="t('companies.title')"
+                :description="t('companies.description')"
+                class="mb-0"
+            />
+
+            <div class="shrink-0">
+                <CreateCompanyDialog />
+            </div>
+        </div>
 
         <div
             v-if="companies.length"

@@ -214,6 +214,13 @@
         "overview_description": "Informações gerais da empresa.",
         "name": "Nome",
         "identifier": "Identificador",
-        "back": "Voltar às empresas"
+        "back": "Voltar às empresas",
+        "create": {
+            "title": "Criar empresa",
+            "description": "Introduz o nome da empresa. Ficarás como proprietário e poderás gerir a equipa.",
+            "name_placeholder": "Ex.: Atlas Digital",
+            "cancel": "Cancelar",
+            "submit": "Criar empresa"
+        }
     }
 }
