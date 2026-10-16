@@ -221,6 +221,12 @@
             "name_placeholder": "E.g. Atlas Digital",
             "cancel": "Cancel",
             "submit": "Create company"
+        },
+        "edit": {
+            "title": "Edit company",
+            "description": "Update the company name. Its identifier will remain unchanged.",
+            "cancel": "Cancel",
+            "submit": "Save changes"
         }
     }
 }

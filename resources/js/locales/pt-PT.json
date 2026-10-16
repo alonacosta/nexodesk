@@ -221,6 +221,12 @@
             "name_placeholder": "Ex.: Atlas Digital",
             "cancel": "Cancelar",
             "submit": "Criar empresa"
+        },
+        "edit": {
+            "title": "Editar empresa",
+            "description": "Atualiza o nome da empresa. O identificador mantém-se.",
+            "cancel": "Cancelar",
+            "submit": "Guardar alterações"
         }
     }
 }

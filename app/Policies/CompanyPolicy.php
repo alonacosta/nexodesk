@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Enums\CompanyRole;
 use App\Models\Company;
 use App\Models\User;
 
@@ -38,7 +39,13 @@ class CompanyPolicy
      */
     public function update(User $user, Company $company): bool
     {
-        return false;
+        return $user->companies()
+            ->whereKey($company->id)
+            ->wherePivotIn('role', [
+                CompanyRole::Owner->value,
+                CompanyRole::Admin->value,
+            ])
+            ->exists();
     }
 
     /**

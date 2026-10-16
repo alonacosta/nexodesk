@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enums\CompanyRole;
 use App\Http\Requests\StoreCompanyRequest;
+use App\Http\Requests\UpdateCompanyRequest;
 use App\Models\Company;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -48,6 +49,9 @@ class CompanyController extends Controller
                 'name' => $company->name,
                 'slug' => $company->slug,
             ],
+            'can' => [
+                'update' => Gate::allows('update', $company),
+            ],
         ]);
     }
 
@@ -73,6 +77,15 @@ class CompanyController extends Controller
 
             return $company;
         });
+
+        return to_route('companies.show', [
+            'company' => $company->slug,
+        ]);
+    }
+
+    public function update(UpdateCompanyRequest $request, Company $company): RedirectResponse
+    {
+        $company->update($request->validated());
 
         return to_route('companies.show', [
             'company' => $company->slug,

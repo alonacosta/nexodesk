@@ -6,8 +6,10 @@ Built as a portfolio and learning project with Laravel, Vue and TypeScript,
 with a focus on maintainable code, authorization and automated testing.
 
 > Work in progress. The project includes authentication, localization,
-> company memberships, and company listing and details pages.
-> Company creation, member management and ticket workflows are not implemented yet.
+> company creation with automatic owner membership, and company listing
+> and details pages.
+> Company editing, deletion, member management and ticket workflows
+> are not implemented yet.
 
 ## Preview
 
@@ -24,48 +26,23 @@ with a focus on maintainable code, authorization and automated testing.
 - Laravel Wayfinder
 - Vite Plus
 
-## Current progress
+## Features
 
-- Laravel Vue starter kit with authentication.
-- Shared color palette with light and dark theme tokens.
-- Frontend translation setup for English and Portuguese (Portugal).
-- Language switcher with the selected locale stored in the session.
-- Laravel and Vue locale synchronization.
-- Portuguese backend translations through Laravel Lang.
-- Server-side validation of supported locales.
-- Responsive welcome page and NexoDesk branding.
-- Translated authentication and account settings screens.
-- Company data model with unique slugs.
-- Many-to-many relationships between users and companies.
-- Company-specific membership roles: owner, admin and member.
-- Automated tests for company relationships, role casting and duplicate memberships.
-- Company listing restricted to the authenticated user's memberships.
-- Company details pages accessible through unique slugs.
-- Policy-based access control for viewing individual companies.
-- Automated tests for member access, forbidden access and missing companies.
+- Authentication and account settings.
+- English and Portuguese (Portugal) localization.
+- Light and dark themes.
+- Company creation with automatic owner membership.
+- Company listing and details restricted to members.
+- Automated tests and continuous integration.
 
 ## Roadmap
 
-- [x] Set up the Laravel and Vue application
-- [x] Define the application color palette
-- [x] Implement language selection and persistence
-- [x] Add Portuguese backend translations
-- [x] Test the locale selection flow
-- [x] Build the NexoDesk welcome page
-- [x] Document and configure continuous integration
-- [x] Add company and membership models with role casting
-- [x] Test company relationships and membership constraints
-- [x] List the authenticated user's companies
-- [x] Add company details pages with membership authorization
-- [x] Test company listing isolation and details access
-- [ ] Implement company registration and management screens
-- [ ] Add company invitations and member management
-- [ ] Implement role-based permissions and ownership transfer
-- [ ] Implement customer management
-- [ ] Implement ticket creation, assignment and status updates
-- [ ] Enforce company data isolation and authorization
-- [ ] Test the main application workflows
-- [ ] Deploy a public demo
+- Company editing and deletion.
+- Invitations, member management and role-based permissions.
+- Customer management.
+- Ticket creation, assignment and status tracking.
+- Dashboard with support activity summaries.
+- Public demo deployment.
 
 ## Local development
 
@@ -97,6 +74,10 @@ Open the local URL assigned by Herd.
 Check frontend formatting and linting:
 
     npm run check
+
+Run the complete CI checks locally:
+
+    composer ci:check
 
 Apply automatic fixes:
 
@@ -143,8 +124,15 @@ Custom application text must be added to the appropriate translation files.
 
 ## Security approach
 
-Security is part of the development process. Planned company and ticket
-features will require server-side authorization and tests for data isolation.
+Company listing queries are scoped to the authenticated user's memberships.
+Access to individual companies is checked through a Laravel policy.
+
+Company creation is authorized and validated on the server. The backend
+generates the slug and assigns the authenticated user as owner, saving
+the company and membership within a single database transaction.
+
+Role-based authorization for company management and data isolation
+for customers and tickets are planned.
 
 Environment files, credentials and application secrets must not be committed.
 The `.env.example` file should contain placeholders and safe defaults only.

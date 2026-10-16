@@ -14,6 +14,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('companies', [CompanyController::class, 'index'])->name('companies.index');
     Route::post('companies', [CompanyController::class, 'store'])->name('companies.store');
     Route::get('companies/{company:slug}', [CompanyController::class, 'show'])->name('companies.show');
+    Route::patch('companies/{company:slug}', [CompanyController::class, 'update'])->name('companies.update');
 });
 
 require __DIR__.'/settings.php';
