@@ -53,7 +53,10 @@ class CompanyPolicy
      */
     public function delete(User $user, Company $company): bool
     {
-        return false;
+        return $user->companies()
+            ->whereKey($company->id)
+            ->wherePivot('role', CompanyRole::Owner->value)
+            ->exists();
     }
 
     /**

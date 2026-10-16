@@ -51,6 +51,7 @@ class CompanyController extends Controller
             ],
             'can' => [
                 'update' => Gate::allows('update', $company),
+                'delete' => Gate::allows('delete', $company),
             ],
         ]);
     }
@@ -90,5 +91,13 @@ class CompanyController extends Controller
         return to_route('companies.show', [
             'company' => $company->slug,
         ]);
+    }
+
+    public function destroy(Company $company): RedirectResponse
+    {
+        Gate::authorize('delete', $company);
+        $company->delete();
+
+        return to_route('companies.index');
     }
 }

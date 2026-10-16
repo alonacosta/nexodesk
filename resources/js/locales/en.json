@@ -227,6 +227,12 @@
             "description": "Update the company name. Its identifier will remain unchanged.",
             "cancel": "Cancel",
             "submit": "Save changes"
+        },
+        "delete": {
+            "title": "Delete company",
+            "description": "Are you sure you want to delete the company “{name}”? The company and its memberships will be permanently deleted. User accounts will be kept. This action cannot be undone.",
+            "cancel": "Cancel",
+            "submit": "Delete company"
         }
     }
 }

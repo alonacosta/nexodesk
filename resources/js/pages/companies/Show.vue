@@ -5,6 +5,7 @@ import { Head, Link } from '@inertiajs/vue3';
 import Heading from '@/components/Heading.vue';
 import { Button } from '@/components/ui/button';
 import EditCompanyDialog from '@/components/companies/EditCompanyDialog.vue';
+import DeleteCompanyDialog from '@/components/companies/DeleteCompanyDialog.vue';
 
 defineProps<{
     company: {
@@ -14,6 +15,7 @@ defineProps<{
     };
     can: {
         update: boolean;
+        delete: boolean;
     };
 }>();
 
@@ -42,8 +44,13 @@ const { t } = useI18n();
                 :description="t('companies.overview_description')"
             />
 
-            <div v-if="can.update" class="shrink-0">
-                <EditCompanyDialog :company="company" />
+            <div
+                v-if="can.update || can.delete"
+                class="flex shrink-0 flex-wrap gap-2"
+            >
+                <EditCompanyDialog v-if="can.update" :company="company" />
+
+                <DeleteCompanyDialog v-if="can.delete" :company="company" />
             </div>
         </div>
 

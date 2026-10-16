@@ -227,6 +227,12 @@
             "description": "Atualiza o nome da empresa. O identificador mantém-se.",
             "cancel": "Cancelar",
             "submit": "Guardar alterações"
+        },
+        "delete": {
+            "title": "Eliminar empresa",
+            "description": "Tens a certeza de que queres eliminar a empresa «{name}»? A empresa e as associações dos seus membros serão eliminadas permanentemente. As contas dos utilizadores serão mantidas. Esta ação não pode ser anulada.",
+            "cancel": "Cancelar",
+            "submit": "Eliminar empresa"
         }
     }
 }
