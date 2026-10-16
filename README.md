@@ -6,10 +6,8 @@ Built as a portfolio and learning project with Laravel, Vue and TypeScript,
 with a focus on maintainable code, authorization and automated testing.
 
 > Work in progress. The project includes authentication, localization,
-> company creation with automatic owner membership, and company listing
-> and details pages.
-> Company editing, deletion, member management and ticket workflows
-> are not implemented yet.
+> company management with membership-based access and role-based permission.
+> Invitations, member management and ticket workflows are not implemented yet.
 
 ## Preview
 
@@ -33,12 +31,13 @@ with a focus on maintainable code, authorization and automated testing.
 - Light and dark themes.
 - Company creation with automatic owner membership.
 - Company listing and details restricted to members.
+- Company editing by owners and admins, and deletion by owners.
 - Automated tests and continuous integration.
 
 ## Roadmap
 
-- Company editing and deletion.
-- Invitations, member management and role-based permissions.
+- Invitations, member management.
+- Membership role management and ownership transfer.
 - Customer management.
 - Ticket creation, assignment and status tracking.
 - Dashboard with support activity summaries.
@@ -125,14 +124,18 @@ Custom application text must be added to the appropriate translation files.
 ## Security approach
 
 Company listing queries are scoped to the authenticated user's memberships.
-Access to individual companies is checked through a Laravel policy.
+Laravel policies enforce company access: members can view their companies,
+owners and admins can edit them, and only owners can delete them.
 
 Company creation is authorized and validated on the server. The backend
 generates the slug and assigns the authenticated user as owner, saving
 the company and membership within a single database transaction.
 
-Role-based authorization for company management and data isolation
-for customers and tickets are planned.
+Company deletion removes its memberships while preserving user accounts.
+Automated tests cover access restrictions and company data isolation.
+
+Authorization and data isolation for customers and tickets will be
+implemented alongside those features.
 
 Environment files, credentials and application secrets must not be committed.
 The `.env.example` file should contain placeholders and safe defaults only.
