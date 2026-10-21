@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { index } from '@/routes/companies';
+import { index as membersIndex } from '@/routes/companies/members';
 import { useI18n } from 'vue-i18n';
 import { Head, Link } from '@inertiajs/vue3';
 import Heading from '@/components/Heading.vue';
@@ -44,10 +45,13 @@ const { t } = useI18n();
                 :description="t('companies.overview_description')"
             />
 
-            <div
-                v-if="can.update || can.delete"
-                class="flex shrink-0 flex-wrap gap-2"
-            >
+            <div class="flex shrink-0 flex-wrap gap-2">
+                <Button variant="outline" as-child>
+                    <Link :href="membersIndex(company.slug)">
+                        {{ t('companies.members.title') }}
+                    </Link>
+                </Button>
+
                 <EditCompanyDialog v-if="can.update" :company="company" />
 
                 <DeleteCompanyDialog v-if="can.delete" :company="company" />

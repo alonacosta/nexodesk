@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\CompanyMemberController;
 use App\Http\Controllers\LocaleController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('companies/{company:slug}', [CompanyController::class, 'show'])->name('companies.show');
     Route::patch('companies/{company:slug}', [CompanyController::class, 'update'])->name('companies.update');
     Route::delete('companies/{company:slug}', [CompanyController::class, 'destroy'])->name('companies.destroy');
+
+    Route::get('companies/{company:slug}/members', [CompanyMemberController::class, 'index'])->name('companies.members.index');
 });
 
 require __DIR__.'/settings.php';

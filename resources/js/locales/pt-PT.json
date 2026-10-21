@@ -233,6 +233,19 @@
             "description": "Tens a certeza de que queres eliminar a empresa «{name}»? A empresa e as associações dos seus membros serão eliminadas permanentemente. As contas dos utilizadores serão mantidas. Esta ação não pode ser anulada.",
             "cancel": "Cancelar",
             "submit": "Eliminar empresa"
+        },
+        "members": {
+            "title": "Membros",
+            "description": "Consulta os membros da empresa «{name}».",
+            "role": "Função",
+            "empty": "Não foram encontrados membros.",
+            "back": "Voltar à empresa"
         }
+    },
+    "pagination": {
+        "label": "Paginação",
+        "page": "Página {current} de {last}",
+        "previous": "Anterior",
+        "next": "Seguinte"
     }
 }

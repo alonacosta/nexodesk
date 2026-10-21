@@ -233,6 +233,19 @@
             "description": "Are you sure you want to delete the company “{name}”? The company and its memberships will be permanently deleted. User accounts will be kept. This action cannot be undone.",
             "cancel": "Cancel",
             "submit": "Delete company"
+        },
+        "members": {
+            "title": "Members",
+            "description": "View the members of {name}.",
+            "role": "Role",
+            "empty": "No members found.",
+            "back": "Back to company"
         }
+    },
+    "pagination": {
+        "label": "Pagination",
+        "page": "Page {current} of {last}",
+        "previous": "Previous",
+        "next": "Next"
     }
 }
