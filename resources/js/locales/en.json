@@ -239,7 +239,10 @@
             "description": "View the members of {name}.",
             "role": "Role",
             "empty": "No members found.",
-            "back": "Back to company"
+            "back": "Back to company",
+            "search_label": "Search members",
+            "search_placeholder": "Name or email",
+            "search_submit": "Search"
         }
     },
     "pagination": {

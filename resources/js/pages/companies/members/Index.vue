@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { PaginatedData } from '@/types/pagination';
 import { index } from '@/routes/companies';
+import { index as membersIndex } from '@/routes/companies/members';
 import { useI18n } from 'vue-i18n';
-import { computed } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { dataTableFeatures } from '@/components/data-table/features';
 import { ColumnDef } from '@tanstack/vue-table';
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link, router } from '@inertiajs/vue3';
 import Heading from '@/components/Heading.vue';
 import DataTable from '@/components/data-table/DataTable.vue';
 import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
 
 type CompanyMember = {
     id: number;
@@ -17,13 +20,16 @@ type CompanyMember = {
     role: 'owner' | 'admin' | 'member';
 };
 
-defineProps<{
+const props = defineProps<{
     company: {
         id: number;
         name: string;
         slug: string;
     };
     members: PaginatedData<CompanyMember>;
+    filters: {
+        search: string;
+    };
 }>();
 
 defineOptions({
@@ -38,6 +44,28 @@ defineOptions({
 });
 
 const { t } = useI18n();
+
+const search = ref(props.filters.search);
+
+watch(
+    () => props.filters.search,
+    (value) => {
+        search.value = value;
+    },
+);
+
+function applySearch(): void {
+    const value = search.value.trim();
+
+    router.get(
+        membersIndex.url(props.company.slug),
+        value ? { search: value } : {},
+        {
+            preserveState: true,
+            preserveScroll: true,
+        },
+    );
+}
 
 const columns = computed<ColumnDef<typeof dataTableFeatures, CompanyMember>[]>(
     () => [
@@ -68,6 +96,30 @@ const columns = computed<ColumnDef<typeof dataTableFeatures, CompanyMember>[]>(
                 t('companies.members.description', { company: company.name })
             "
         />
+
+        <form
+            role="search"
+            class="flex flex-wrap items-end gap-3"
+            @submit.prevent="applySearch"
+        >
+            <div class="grid w-full gap-2 sm:max-w-sm">
+                <Label for="member-search">{{
+                    t('companies.members.search_label')
+                }}</Label>
+                <Input
+                    id="member-search"
+                    v-model="search"
+                    type="search"
+                    name="search"
+                    maxlength="255"
+                    :placeholder="t('companies.members.search_placeholder')"
+                />
+            </div>
+
+            <Button type="submit">
+                {{ t('companies.members.search_submit') }}
+            </Button>
+        </form>
 
         <DataTable
             :columns="columns"

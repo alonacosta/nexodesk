@@ -135,3 +135,155 @@ test('company members are paginated', function () {
             ->where('members.data.0.id', $members->last()->id)
         );
 });
+
+test('members can be searched by name or email', function (string $search) {
+    $company = Company::factory()->create();
+
+    $owner = User::factory()->create([
+        'name' => 'Miguel Costa',
+        'email' => 'miguel@example.com',
+    ]);
+
+    $member = User::factory()->create([
+        'name' => 'Ana Silva',
+        'email' => 'support@example.com',
+    ]);
+
+    $company->users()->attach([
+        $owner->id => ['role' => CompanyRole::Owner->value],
+        $member->id => ['role' => CompanyRole::Member->value],
+    ]);
+
+    $this->actingAs($owner)
+        ->get(route('companies.members.index', [
+            'company' => $company->slug,
+            'search' => $search,
+        ]))
+        ->assertOk()
+        ->assertInertia(fn (Assert $page) => $page
+            ->component('companies/members/Index')
+            ->where('filters.search', $search)
+            ->where('members.total', 1)
+            ->has('members.data', 1)
+            ->where('members.data.0.id', $member->id)
+        );
+
+})->with([
+    'name' => 'Ana',
+    'email' => 'support',
+]);
+
+test('search does not return matching members from other companies', function () {
+    $company = Company::factory()->create();
+    $otherCompany = Company::factory()->create();
+
+    $owner = User::factory()->create([
+        'name' => 'Miguel Costa',
+        'email' => 'miguel@example.com',
+    ]);
+
+    $outsider = User::factory()->create([
+        'name' => 'Joana Silva',
+        'email' => 'external-support@example.com',
+    ]);
+
+    $company->users()->attach([
+        $owner->id => ['role' => CompanyRole::Owner->value],
+    ]);
+
+    $otherCompany->users()->attach([
+        $outsider->id => ['role' => CompanyRole::Member->value],
+    ]);
+
+    $this->actingAs($owner)
+        ->get(route('companies.members.index', [
+            'company' => $company->slug,
+            'search' => 'external-support',
+        ]))
+        ->assertOk()
+        ->assertInertia(fn (Assert $page) => $page
+            ->component('companies/members/Index')
+            ->where('members.total', 0)
+            ->has('members.data', 0)
+        );
+});
+
+test('an empty search returns all company members', function () {
+    $company = Company::factory()->create();
+    $owner = User::factory()->create();
+    $member = User::factory()->create();
+
+    $company->users()->attach([
+        $owner->id => ['role' => CompanyRole::Owner->value],
+        $member->id => ['role' => CompanyRole::Member->value],
+    ]);
+
+    $this->actingAs($owner)
+        ->get(route('companies.members.index', [
+            'company' => $company->slug,
+            'search' => '   ',
+        ]))
+        ->assertOk()
+        ->assertInertia(fn (Assert $page) => $page
+            ->component('companies/members/Index')
+            ->where('filters.search', '')
+            ->where('members.total', 2)
+            ->has('members.data', 2)
+        );
+});
+
+test('search results are paginated and pagination links preserve the search', function () {
+    $company = Company::factory()->create();
+
+    $owner = User::factory()->create([
+        'name' => 'AAA Owner',
+        'email' => 'owner@example.com',
+    ]);
+
+    $company->users()->attach($owner->id, ['role' => CompanyRole::Owner->value]);
+
+    $members = User::factory()->count(21)->create([
+        'name' => 'Support Member',
+    ]);
+
+    foreach ($members as $member) {
+        $company->users()->attach($member->id, ['role' => CompanyRole::Member->value]);
+    }
+
+    $response = $this->actingAs($owner)
+        ->get(route('companies.members.index', [
+            'company' => $company->slug,
+            'search' => 'Support',
+        ]));
+
+    $response->assertOk()
+        ->assertInertia(fn (Assert $page) => $page
+            ->component('companies/members/Index')
+            ->where('filters.search', 'Support')
+            ->where('members.total', 21)
+            ->where('members.current_page', 1)
+            ->where('members.last_page', 2)
+            ->has('members.data', 20)
+        );
+
+    $nextPageUrl = $response->inertiaProps('members.next_page_url');
+
+    expect($nextPageUrl)->toBeString();
+
+    parse_str(parse_url($nextPageUrl, PHP_URL_QUERY), $query);
+
+    expect($query)
+        ->toHaveKey('search', 'Support')
+        ->toHaveKey('page', 2);
+
+    $this->get($nextPageUrl)
+        ->assertOk()
+        ->assertInertia(fn (Assert $page) => $page
+            ->component('companies/members/Index')
+            ->where('filters.search', 'Support')
+            ->where('members.total', 21)
+            ->where('members.current_page', 2)
+            ->has('members.data', 1)
+            ->where('members.data.0.id', $members->last()->id)
+        );
+});

@@ -239,7 +239,10 @@
             "description": "Consulta os membros da empresa «{name}».",
             "role": "Função",
             "empty": "Não foram encontrados membros.",
-            "back": "Voltar à empresa"
+            "back": "Voltar à empresa",
+            "search_label": "Pesquisar membros",
+            "search_placeholder": "Nome ou email",
+            "search_submit": "Pesquisar"
         }
     },
     "pagination": {

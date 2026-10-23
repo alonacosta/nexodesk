@@ -6,6 +6,8 @@ namespace App\Models;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
+use Illuminate\Database\Eloquent\Attributes\Scope;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -59,5 +61,23 @@ class User extends Authenticatable implements PasskeyUser
             ->using(CompanyUser::class)
             ->withPivot('id', 'role')
             ->withTimestamps();
+    }
+
+    /**
+     * @param  Builder<User>  $query
+     */
+    #[Scope]
+    protected function search(Builder $query, ?string $search): void
+    {
+        $search = trim($search ?? '');
+
+        if ($search === '') {
+            return;
+        }
+
+        $query->where(function (Builder $query) use ($search): void {
+            $query->where('users.name', 'like', '%'.$search.'%')
+                ->orWhere('users.email', 'like', '%'.$search.'%');
+        });
     }
 }
