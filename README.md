@@ -6,7 +6,8 @@ Built as a portfolio and learning project with Laravel, Vue and TypeScript,
 with a focus on maintainable code, authorization and automated testing.
 
 > Work in progress. The project includes authentication, localization,
-> company management with membership-based access and role-based permission.
+> company management with membership-based access and role-based permissions,
+> and searchable member lists.
 > Invitations, member management and ticket workflows are not implemented yet.
 
 ## Preview
@@ -23,6 +24,7 @@ with a focus on maintainable code, authorization and automated testing.
 - Pest
 - Laravel Wayfinder
 - Vite Plus
+- TanStack Table 9 and shadcn-vue.
 
 ## Features
 
@@ -33,10 +35,12 @@ with a focus on maintainable code, authorization and automated testing.
 - Company listing and details restricted to members.
 - Company editing by owners and admins, and deletion by owners.
 - Automated tests and continuous integration.
+- Company member listing with server-side pagination and search by name or email.
+- Reusable data table component.
 
 ## Roadmap
 
-- Invitations, member management.
+- Member invitations and removal.
 - Membership role management and ownership transfer.
 - Customer management.
 - Ticket creation, assignment and status tracking.
@@ -133,6 +137,9 @@ the company and membership within a single database transaction.
 
 Company deletion removes its memberships while preserving user accounts.
 Automated tests cover access restrictions and company data isolation.
+
+Member listing and search are restricted to the requested company and
+require membership authorization.
 
 Authorization and data isolation for customers and tickets will be
 implemented alongside those features.
