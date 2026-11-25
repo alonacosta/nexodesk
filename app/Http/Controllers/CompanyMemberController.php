@@ -45,6 +45,9 @@ class CompanyMemberController extends Controller
             'filters' => [
                 'search' => $search,
             ],
+            'can' => [
+                'invite' => Gate::allows('inviteMember', $company),
+            ],
         ]);
     }
 }

@@ -12,6 +12,7 @@ import DataTable from '@/components/data-table/DataTable.vue';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
+import InviteMemberDialog from '@/components/companies/InviteMemberDialog.vue';
 
 type CompanyMember = {
     id: number;
@@ -30,6 +31,7 @@ const props = defineProps<{
     filters: {
         search: string;
     };
+    can: { invite: boolean };
 }>();
 
 defineOptions({
@@ -53,6 +55,12 @@ watch(
         search.value = value;
     },
 );
+
+watch(search, (value) => {
+    if (value.trim() === '' && props.filters.search) {
+        applySearch();
+    }
+});
 
 function applySearch(): void {
     const value = search.value.trim();
@@ -96,6 +104,10 @@ const columns = computed<ColumnDef<typeof dataTableFeatures, CompanyMember>[]>(
                 t('companies.members.description', { company: company.name })
             "
         />
+
+        <div v-if="can.invite" class="shrink-0">
+            <InviteMemberDialog :company-slug="company.slug" />
+        </div>
 
         <form
             role="search"

@@ -250,5 +250,20 @@
         "page": "Page {current} of {last}",
         "previous": "Previous",
         "next": "Next"
+    },
+    "invitations": {
+        "create": {
+            "title": "Invite member",
+            "description": "Enter the email address of the person you want to invite to the company.",
+            "submit": "Send invitation",
+            "cancel": "Cancel"
+        },
+        "show": {
+            "title": "Company invitation",
+            "description": "You have been invited to join",
+            "instructions": "Accept the invitation to become a member of this company and access its workspace.",
+            "accept": "Accept invitation",
+            "signed_in_as": "Signed in as {name}"
+        }
     }
 }

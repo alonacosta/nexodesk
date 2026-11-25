@@ -74,4 +74,15 @@ class CompanyPolicy
     {
         return false;
     }
+
+    public function inviteMember(User $user, Company $company): bool
+    {
+        return $user->companies()
+            ->whereKey($company->id)
+            ->wherePivotIn('role', [
+                CompanyRole::Owner->value,
+                CompanyRole::Admin->value,
+            ])
+            ->exists();
+    }
 }

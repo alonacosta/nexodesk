@@ -250,5 +250,20 @@
         "page": "Página {current} de {last}",
         "previous": "Anterior",
         "next": "Seguinte"
+    },
+    "invitations": {
+        "create": {
+            "title": "Convidar membro",
+            "description": "Introduz o endereço de email da pessoa que queres convidar para a empresa.",
+            "submit": "Enviar convite",
+            "cancel": "Cancelar"
+        },
+        "show": {
+            "title": "Convite para empresa",
+            "description": "Recebeu um convite para se juntar a",
+            "instructions": "Aceite o convite para se tornar membro desta empresa e aceder ao seu espaço de trabalho.",
+            "accept": "Aceitar convite",
+            "signed_in_as": "Sessão iniciada como {name}"
+        }
     }
 }
